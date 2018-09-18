@@ -34,8 +34,8 @@ public class CylinderTest {
 	public void testSurfaceAreaFloatFloat() {
 		//testCyl = 113.1 
 		//badCyl = 0
-		assertEquals(113.1, testCyl.surfaceArea(testCyl.getRadius(), testCyl.getHeight()), 0.01);
-		//assertEquals(0, badCyl.surfaceArea(badCyl.getRadius(), badCyl.getHeight()), 0.0001);
+		assertEquals(113.1, testCyl.surfaceArea(), 0.01);
+		//assertEquals(0, badCyl.surfaceArea(), 0.0001);
 
 	}
 
@@ -43,8 +43,8 @@ public class CylinderTest {
 	public void testVolumeFloatFloat() {
 		//testCyl = 84.82
 		//badCyl = 0
-		assertEquals(84.82, testCyl.volume(testCyl.getRadius(), testCyl.getHeight()), 0.01);
-		//assertEquals(0, badCyl.volume(badCyl.getRadius(), badCyl.getHeight()), 0.0001);
+		assertEquals(84.82, testCyl.volume(), 0.01);
+		//assertEquals(0, badCyl.volume(), 0.0001);
 
 	}
 

@@ -27,5 +27,27 @@ public class Shpere extends Shape {
 			this.setRadius(0);
 		}
 	}
-
+	@Override
+	public float surfaceArea() {
+		float result = (float) (4*Math.PI*radius*radius);
+		return result;
+	}
+	@Override
+	public float volume() {
+		float result = (float)(4/3*Math.PI*radius*radius*radius);
+		return result;
+	}
+	@Override
+	public void render() {
+		String newline = System.getProperty("line.separator");
+		float surfaceArea = surfaceArea();
+		float volume = volume();
+		//make the dialog box
+		JOptionPane.showMessageDialog(null,
+			    "Radius: " + radius + newline +
+			    		"Surface Area: " + surfaceArea + newline +
+			    		"Volume: " + volume,
+			    "Sphere",
+			    JOptionPane.PLAIN_MESSAGE);
+	}
 }

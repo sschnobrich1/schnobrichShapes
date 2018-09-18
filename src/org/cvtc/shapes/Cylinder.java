@@ -42,7 +42,34 @@ public class Cylinder extends Shape {
 					"Error",
 				    JOptionPane.PLAIN_MESSAGE);
 			this.setHeight(0);
-		}
+		}		
 	}
 	
+	@Override
+	public float volume() {
+		float result = (float)(Math.PI*radius*radius*height);
+		return result;
+	}
+	
+	@Override
+	public float surfaceArea() {	
+		float result = (float) (2*Math.PI*radius*height + 2*Math.PI*radius*radius);
+		return result;
+	}
+	
+	@Override
+	public void render() {
+		String newline = System.getProperty("line.separator");
+		float surfaceArea = surfaceArea();
+		float volume = volume();
+		//make the dialog box
+		JOptionPane.showMessageDialog(null,
+				"Radius: " + radius + newline +
+						"Height: " + height + newline +
+			    		"Surface Area: " + surfaceArea + newline +
+			    		"Volume: " + volume,
+			    "Cylinder",
+			    JOptionPane.PLAIN_MESSAGE);
+	}
+
 }

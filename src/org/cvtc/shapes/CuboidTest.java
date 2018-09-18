@@ -40,8 +40,8 @@ public class CuboidTest {
 		//formula is 2(h*w) + 2(w*l) + 2(l*h)
 		//testCube = 54
 		//badCube = 0
-		assertEquals(54, testCube.surfaceArea(testCube.getWidth(), testCube.getDepth(), testCube.getHeight()), 0.0001);
-		//assertEquals(0, badCube.surfaceArea(badCube.getWidth(), badCube.getDepth(), badCube.getHeight()), 0.0001);
+		assertEquals(54, testCube.surfaceArea(), 0.0001);
+		//assertEquals(0, badCube.surfaceArea(), 0.0001);
 	}
 
 	@Test
@@ -49,8 +49,8 @@ public class CuboidTest {
 		//height*width*length
 		//testCube = 27
 		//badCube = 0
-		assertEquals(27, testCube.volume(testCube.getWidth(), testCube.getWidth(), testCube.getHeight()), 0.0001);
-		//assertEquals(0, badCube.volume(badCube.getWidth(), badCube.getWidth(), badCube.getHeight()), 0.0001);
+		assertEquals(27, testCube.volume(), 0.0001);
+		//assertEquals(0, badCube.volume(), 0.0001);
 
 	}
 

@@ -62,5 +62,32 @@ public class Cuboid extends Shape {
 			this.setDepth(0);
 		}
 	}
-
+	
+	@Override
+	public float surfaceArea() {
+		float result = width*height*2 + height*depth*2 + width*depth*2;
+		return result;
+	}
+	
+	@Override
+	public float volume() {
+		float result = (float)(width*depth*height);
+		return result;
+	}
+	
+	@Override
+	public void render() {
+		String newline = System.getProperty("line.separator");
+		float surfaceArea = surfaceArea();
+		float volume = volume();
+		//make the dialog box
+		JOptionPane.showMessageDialog(null,
+				"Width: " + width + newline +
+						"Depth: " + depth + newline +
+						"Height: " + height + newline +
+			    		"Surface Area: " + surfaceArea + newline +
+			    		"Volume: " + volume,
+			    "Cuboid",
+			    JOptionPane.PLAIN_MESSAGE);
+	}
 }
