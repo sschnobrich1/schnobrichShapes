@@ -12,30 +12,30 @@ import javax.swing.JOptionPane;
 public abstract class Shape {
 	
 	//Surface area methods. Sphere, cuboid, and cylinder respectively.
-	public static float surfaceArea(float radius) {
-			float result = (float) (4*3.14*radius*radius);
+	public float surfaceArea(float radius) {
+			float result = (float) (4*Math.PI*radius*radius);
 			return result;
 		}
-	public static float surfaceArea(float width, float depth, float height) {
+	public float surfaceArea(float width, float depth, float height) {
 			float result = width*height*2 + height*depth*2 + width*depth*2;
 			return result;
 		}
-	public static float surfaceArea(float radius, float height) {	
-			float result = (float) (2*3.14*radius*height);
+	public float surfaceArea(float radius, float height) {	
+			float result = (float) (2*Math.PI*radius*height + 2*Math.PI*radius*radius);
 			return result;
 		}
 
 	//Volume methods. Sphere, cuboid and cylinder respectively
-	public static float volume(float radius) {
-		float result = (float)(4/3*3.14*radius*radius*radius);
+	public float volume(float radius) {
+		float result = (float)(4/3*Math.PI*radius*radius*radius);
 		return result;
 	}
-	public static float volume(float width, float depth, float height) {
+	public float volume(float width, float depth, float height) {
 		float result = (float)(width*depth*height);
 		return result;
 	}
-	public static float volume(float radius, float height) {
-		float result = (float)(3.14*radius*radius*height);
+	public float volume(float radius, float height) {
+		float result = (float)(Math.PI*radius*radius*height);
 		return result;
 	}
 

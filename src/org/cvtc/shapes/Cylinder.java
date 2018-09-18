@@ -1,5 +1,7 @@
 package org.cvtc.shapes;
 
+import javax.swing.JOptionPane;
+
 public class Cylinder extends Shape {
 	
 	private float radius = 0;
@@ -19,11 +21,27 @@ public class Cylinder extends Shape {
 	}
 	public Cylinder(float radius, float height) {
 		super();
-		if (radius>0) {
+		
+		//radius
+		if (radius > 0) {
 			this.setRadius(radius);
+		} else {
+			JOptionPane.showMessageDialog(null,
+					"Parameter of " + radius + " is invalid. Radius will be set to 0.",
+					"Error",
+				    JOptionPane.PLAIN_MESSAGE);
+			this.setRadius(0);
 		}
-		if (height>0) {
+		
+		//height
+		if (height > 0) {
 			this.setHeight(height);
+		} else {
+			JOptionPane.showMessageDialog(null,
+					"Parameter of " + height + " is invalid. Height will be set to 0.",
+					"Error",
+				    JOptionPane.PLAIN_MESSAGE);
+			this.setHeight(0);
 		}
 	}
 	

@@ -1,5 +1,7 @@
 package org.cvtc.shapes;
 
+import javax.swing.JOptionPane;
+
 public class Shpere extends Shape {
 	private float radius = 0;
 
@@ -13,10 +15,17 @@ public class Shpere extends Shape {
 
 	public Shpere(float radius) {
 		super();
-		if(radius>0) {
+		
+		//radius
+		if (radius > 0) {
 			this.setRadius(radius);
+		} else {
+			JOptionPane.showMessageDialog(null,
+					"Parameter of " + radius + " is invalid. Radius will be set to 0.",
+					"Error",
+				    JOptionPane.PLAIN_MESSAGE);
+			this.setRadius(0);
 		}
 	}
-	
 
 }
