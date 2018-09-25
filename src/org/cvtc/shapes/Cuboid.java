@@ -1,11 +1,12 @@
 package org.cvtc.shapes;
 
-import javax.swing.JOptionPane;
-
 public class Cuboid extends Shape {
 	private float width = 0;
 	private float height = 0;
 	private float depth = 0;
+	
+	private String message = "";
+	private String title = "";
  
 	public float getWidth() {
 		return width;
@@ -25,18 +26,22 @@ public class Cuboid extends Shape {
 	private void setDepth(float depth) {
 		this.depth = depth;
 	}
-	public Cuboid(float width, float height, float depth) {
-		super();
+	public Cuboid(float width, float height, float depth, Dialog messagebox) {
+		super(messagebox);
 		
 		//width
 		if (width > 0){
 			this.setWidth(width);
 		}
 		else {
-			JOptionPane.showMessageDialog(null,
+			message = "Parameter of " + width + " is invalid. Width will be set to 0.";
+			title = "Error";
+			messagebox.show(message, title);
+			/* JOptionPane.showMessageDialog(null,
 					"Parameter of " + width + " is invalid. Width will be set to 0.",
 					"Error",
-				    JOptionPane.PLAIN_MESSAGE);
+				    JOptionPane.PLAIN_MESSAGE); */
+			
 			this.setWidth(0);
 		}
 		
@@ -44,10 +49,10 @@ public class Cuboid extends Shape {
 		if (height > 0) {
 			this.setHeight(height);
 		} else {
-			JOptionPane.showMessageDialog(null,
-					"Parameter of " + height + " is invalid. Height will be set to 0.",
-					"Error",
-				    JOptionPane.PLAIN_MESSAGE);
+			message = "Parameter of " + height + " is invalid. Height will be set to 0.";
+			title = "Error";
+			
+			messagebox.show(message, title);
 			this.setHeight(0);
 		}
 		
@@ -55,10 +60,10 @@ public class Cuboid extends Shape {
 		if(depth>0) {
 			this.setDepth(depth);
 		} else {
-			JOptionPane.showMessageDialog(null,
-					"Parameter of " + depth + " is invalid. Depth will be set to 0.",
-					"Error",
-				    JOptionPane.PLAIN_MESSAGE);
+			message = "Parameter of " + depth + " is invalid. Height will be set to 0.";
+			title = "Error";
+			
+			messagebox.show(message, title);
 			this.setDepth(0);
 		}
 	}
@@ -75,19 +80,18 @@ public class Cuboid extends Shape {
 		return result;
 	}
 	
-	@Override
+	
 	public void render() {
 		String newline = System.getProperty("line.separator");
 		float surfaceArea = surfaceArea();
 		float volume = volume();
 		//make the dialog box
-		JOptionPane.showMessageDialog(null,
-				"Width: " + width + newline +
-						"Depth: " + depth + newline +
-						"Height: " + height + newline +
-			    		"Surface Area: " + surfaceArea + newline +
-			    		"Volume: " + volume,
-			    "Cuboid",
-			    JOptionPane.PLAIN_MESSAGE);
+		message = "Width: " + width + newline +
+				"Depth: " + depth + newline +
+				"Height: " + height + newline +
+	    		"Surface Area: " + surfaceArea + newline +
+	    		"Volume: " + volume;
+		title = "Cuboid";
+		messagebox.show(message, title);
 	}
 }

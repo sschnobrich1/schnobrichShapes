@@ -1,16 +1,20 @@
-package org.cvtc.shapes;
+package org.cvtc.shapesTests;
 
 import static org.junit.Assert.*;
 
+import org.cvtc.shapes.Cylinder;
+import org.cvtc.shapes.Dialog;
 import org.junit.Test;
 
 public class CylinderTest {
-	Cylinder testCyl = new Cylinder(3,3);
+	private Dialog messagebox = new MessageBoxSub();
+
+	Cylinder testCyl = new Cylinder(3,3, messagebox);
 	
 	//The badCyl, for testing bad inputs, spits out a lot of dialog boxes. 
 	//I've commented it out so you don't have to deal with it. 
 	//Feel free to uncomment any badCyl lines to test them.
-	//Cylinder badCyl = new Cylinder(-3, 0);
+	Cylinder badCyl = new Cylinder(-3, 0, messagebox);
 
 	@Test
 	public void testGetRadius() {

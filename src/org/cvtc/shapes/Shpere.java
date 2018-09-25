@@ -1,9 +1,10 @@
 package org.cvtc.shapes;
 
-import javax.swing.JOptionPane;
-
 public class Shpere extends Shape {
 	private float radius = 0;
+	
+	private String message;
+	private String title;
 
 	public float getRadius() {
 		return radius;
@@ -13,17 +14,17 @@ public class Shpere extends Shape {
 		this.radius = radius;
 	}
 
-	public Shpere(float radius) {
-		super();
+	public Shpere(float radius, Dialog messagebox) {
+		super(messagebox);
 		
 		//radius
 		if (radius > 0) {
 			this.setRadius(radius);
 		} else {
-			JOptionPane.showMessageDialog(null,
-					"Parameter of " + radius + " is invalid. Radius will be set to 0.",
-					"Error",
-				    JOptionPane.PLAIN_MESSAGE);
+			message = "Parameter of " + radius + " is invalid. Height will be set to 0.";
+			title = "Error";
+			
+			messagebox.show(message, title);
 			this.setRadius(0);
 		}
 	}
@@ -37,17 +38,15 @@ public class Shpere extends Shape {
 		float result = (float)(4/3*Math.PI*radius*radius*radius);
 		return result;
 	}
-	@Override
 	public void render() {
 		String newline = System.getProperty("line.separator");
 		float surfaceArea = surfaceArea();
 		float volume = volume();
 		//make the dialog box
-		JOptionPane.showMessageDialog(null,
-			    "Radius: " + radius + newline +
-			    		"Surface Area: " + surfaceArea + newline +
-			    		"Volume: " + volume,
-			    "Sphere",
-			    JOptionPane.PLAIN_MESSAGE);
+		message = "Radius: " + radius + newline +
+	    		"Surface Area: " + surfaceArea + newline +
+	    		"Volume: " + volume;
+		title = "Sphere";
+		messagebox.show(message, title);
 	}
 }

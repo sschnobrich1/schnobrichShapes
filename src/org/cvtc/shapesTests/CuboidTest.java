@@ -1,15 +1,19 @@
-package org.cvtc.shapes;
+package org.cvtc.shapesTests;
 
 import static org.junit.Assert.*;
+
+import org.cvtc.shapes.Cuboid;
+import org.cvtc.shapes.Dialog;
 import org.junit.*;
 
 public class CuboidTest {
-	Cuboid testCube = new Cuboid(3,3,3);
+	private Dialog messagebox = new MessageBoxSub();
+	Cuboid testCube = new Cuboid(3,3,3, messagebox);
 	
 	//The badCube, for testing bad inputs, spits out a lot of dialog boxes. 
 	//I've commented it out so you don't have to deal with it. 
 	//Feel free to uncomment any badCube lines to test them.
-	//Cuboid badCube = new Cuboid(-3, 0, 5);
+	Cuboid badCube = new Cuboid(-3, 0, 5, messagebox);
 	
 	@Test
 	public void testGetWidth() {				

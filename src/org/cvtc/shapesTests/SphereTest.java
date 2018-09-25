@@ -1,16 +1,20 @@
-package org.cvtc.shapes;
+package org.cvtc.shapesTests;
 
 import static org.junit.Assert.*;
 
+import org.cvtc.shapes.Dialog;
+import org.cvtc.shapes.Shpere;
 import org.junit.Test;
 
 public class SphereTest {
-	Shpere testSphere = new Shpere(3);
+	private Dialog messagebox = new MessageBoxSub();
+
+	Shpere testSphere = new Shpere(3, messagebox);
 	
 	//The badSphere, for testing bad inputs, spits out a lot of dialog boxes. 
 	//I've commented it out so you don't have to deal with it. 
 	//Feel free to uncomment any badSphere lines to test them.
-	//Shpere badSphere = new Shpere(-3);
+	Shpere badSphere = new Shpere(-3, messagebox);
 
 	@Test
 	public void testGetRadius() {

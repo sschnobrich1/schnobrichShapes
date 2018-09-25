@@ -3,18 +3,31 @@
  */
 package org.cvtc.shapes;
 
+import org.cvtc.shapes.Dialog;
+
 /**
  * @author Rsaah
  *
  */
-public abstract class Shape {
+public abstract class Shape {	
+	protected Dialog messagebox;
+		
+	public Dialog getMessagebox() {
+		return messagebox;
+	}
+
+	public void setMessagebox(Dialog messagebox) {
+		this.messagebox = messagebox;
+	}
+
 	
 	public abstract float surfaceArea();
 
-	//Volume method. 
 	public abstract float volume();
-
-	//render methods for sphere, cuboid and cylinder respectively.
-	public abstract void render();
+	
+	public Shape(Dialog messagebox) {
+		this.messagebox = messagebox;
+	}
+	
 
 }
