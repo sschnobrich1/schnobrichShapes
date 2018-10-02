@@ -1,6 +1,6 @@
 package org.cvtc.shapes;
 
-public class Cylinder extends Shape {
+public class Cylinder extends Shape implements Render {
 	
 	private float radius = 0;
 	private float height = 0;
@@ -59,7 +59,7 @@ public class Cylinder extends Shape {
 		return result;
 	}
 	
-	public void render() {
+	public int render() {
 		String newline = System.getProperty("line.separator");
 		float surfaceArea = surfaceArea();
 		float volume = volume();
@@ -69,7 +69,7 @@ public class Cylinder extends Shape {
 	    		"Surface Area: " + surfaceArea + newline +
 	    		"Volume: " + volume;
 		title = "Cylinder";
-		messagebox.show(message, title);
+		 return messageBox.show(message, title);
 	}
 
 }

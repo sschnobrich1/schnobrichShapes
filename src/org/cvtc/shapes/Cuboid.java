@@ -1,6 +1,6 @@
 package org.cvtc.shapes;
 
-public class Cuboid extends Shape {
+public class Cuboid extends Shape implements Render{
 	private float width = 0;
 	private float height = 0;
 	private float depth = 0;
@@ -81,7 +81,7 @@ public class Cuboid extends Shape {
 	}
 	
 	
-	public void render() {
+	public int render() {
 		String newline = System.getProperty("line.separator");
 		float surfaceArea = surfaceArea();
 		float volume = volume();
@@ -92,6 +92,6 @@ public class Cuboid extends Shape {
 	    		"Surface Area: " + surfaceArea + newline +
 	    		"Volume: " + volume;
 		title = "Cuboid";
-		messagebox.show(message, title);
+		return messageBox.show(message, title);
 	}
 }

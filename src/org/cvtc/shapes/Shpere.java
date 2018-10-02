@@ -1,6 +1,6 @@
 package org.cvtc.shapes;
 
-public class Shpere extends Shape {
+public class Shpere extends Shape implements Render{
 	private float radius = 0;
 	
 	private String message;
@@ -38,7 +38,7 @@ public class Shpere extends Shape {
 		float result = (float)(4/3*Math.PI*radius*radius*radius);
 		return result;
 	}
-	public void render() {
+	public int render() {
 		String newline = System.getProperty("line.separator");
 		float surfaceArea = surfaceArea();
 		float volume = volume();
@@ -47,6 +47,6 @@ public class Shpere extends Shape {
 	    		"Surface Area: " + surfaceArea + newline +
 	    		"Volume: " + volume;
 		title = "Sphere";
-		messagebox.show(message, title);
+		return messageBox.show(message, title);
 	}
 }
